@@ -92,5 +92,106 @@ export default {};
   border-radius: 50px;
   background: linear-gradient(#16455f, #0e1239);
   box-shadow: 5px 5px 10px gray;
+
+  #cityNameBox {
+    width: 100%;
+    height: 10%;
+
+    .cityName {
+      @include c-center;
+      width: 100%;
+      height: 100%;
+
+      p {
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        line-height: 2.5;
+        text-align: center;
+
+        &:first-child {
+          width: 241px;
+          height: 33px;
+          font-size: 1.35rem;
+        }
+        &:last-child {
+          width: 160px;
+          height: 19px;
+          font-size: 0.9rem;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+
+  #contentBox {
+    width: 100%;
+    height: 62.5%;
+
+    .buttonBox {
+      @include center;
+      width: 100%;
+      height: 20%;
+
+      .buttonBackground {
+        width: 224px;
+        height: 35px;
+        background-color: #052137;
+        border-radius: 10px;
+        display: flex;
+        button {
+          width: 112px;
+          height: 35px;
+          border: 0;
+          border-radius: 7.5px;
+          outline: 0;
+          cursor: pointer;
+
+          &.forecast {
+            background: #0889ff;
+            color: #fff;
+          }
+          &.airquality {
+            background: transparent;
+            color: #467599;
+          }
+        }
+      }
+    }
+
+    .weatherBox {
+      width: 100%;
+      height: 15%;
+
+      .weatherDegree {
+        @include center;
+        width: 100%;
+        height: 15%;
+
+        p {
+          font-size: 3.5rem;
+          font-weight: 500;
+          font-family: 'Be Vietnam Pro', sans-serif;
+          color: #fff;
+        }
+      }
+
+      .weatherIcon {
+        @include center;
+        width: 100%;
+        height: 60%;
+
+        img {
+          width: 168px;
+          height: 160px;
+        }
+      }
+
+      .weatherData {
+        display: flex;
+        width: 100%;
+        height: 25%;
+      }
+    }
+  }
 }
 </style>
