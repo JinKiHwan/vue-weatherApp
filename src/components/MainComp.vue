@@ -190,6 +190,16 @@ export default {};
         display: flex;
         width: 100%;
         height: 25%;
+
+        .detailData {
+          @include c-center;
+          width: 33.33%;
+          height: 100%;
+
+          &:nth-child(1) {
+            margin-left: 10px;
+          }
+        }
       }
     }
   }
