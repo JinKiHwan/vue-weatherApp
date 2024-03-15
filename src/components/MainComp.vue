@@ -21,9 +21,12 @@
           <img src="../assets/img/01d.png" alt="" />
         </div>
         <div class="weatherData">
-          <div>
-            <p></p>
-            <p></p>
+          <div
+            v-for="Temporary in TemporaryData"
+            :key="Temporary.title"
+            class="detailData">
+            <p>{{ Temporary.title }}</p>
+            <p>{{ Temporary.value }}</p>
           </div>
         </div>
       </div>
@@ -80,7 +83,27 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      //임시데이터
+      TemporaryData: [
+        {
+          title: '습도',
+          value: '88%',
+        },
+        {
+          title: '풍속',
+          value: '10m/s',
+        },
+        {
+          title: '풍향',
+          value: '북서',
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -160,7 +183,7 @@ export default {};
 
     .weatherBox {
       width: 100%;
-      height: 15%;
+      height: 60%;
 
       .weatherDegree {
         @include center;
@@ -198,6 +221,28 @@ export default {};
 
           &:nth-child(1) {
             margin-left: 10px;
+          }
+          &:nth-child(2) {
+            margin-left: 0 -10px;
+          }
+          &:nth-child(3) {
+            margin-right: 10px;
+          }
+          p {
+            line-height: 1.5;
+            color: #fff;
+
+            &:first-child {
+              font-size: 1rem;
+              font-weight: 300;
+              font-family: 'Noto Sans KR', sans-serif;
+              opacity: 0.5;
+            }
+            &:last-child {
+              font-size: 1rem;
+              font-weight: 200;
+              font-family: 'Poppins', sans-serif;
+            }
           }
         }
       }
