@@ -248,5 +248,111 @@ export default {
       }
     }
   }
+
+  #todayWeather {
+    width: 100%;
+    height: 17.5%;
+    .textBox {
+      @include center-sb;
+      width: calc(100% - 70px);
+      height: 35%;
+      padding: 0 35px;
+      font-family: 'Noto Sans KR', sans-serif;
+      p {
+        font-weight: 400;
+        font-size: 0.8rem;
+        color: #fff;
+        text-align: center;
+        &:nth-child(2) {
+          font-weight: normal;
+          color: #0085ff;
+          cursor: pointer;
+          margin-bottom: 2px;
+        }
+      }
+    }
+    .timelyWeatherBox {
+      display: flex;
+      align-items: center;
+      width: calc(100% - 70%);
+      height: 65%;
+      padding: 0 30px;
+
+      .timelyWeather {
+        display: flex;
+        width: 126px;
+        height: 70px;
+        background: #0989ff;
+        border-radius: 20px;
+
+        .icon {
+          @include center;
+          width: 45%;
+          height: 100%;
+          img {
+            width: 100%;
+          }
+        }
+        .data {
+          @include c-center-se;
+          width: 55%;
+          height: 100%;
+
+          p {
+            color: whitesmoke;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+
+            &.time {
+              font-size: 0.8rem;
+              font-weight: 200;
+              margin-top: 7.5px;
+            }
+            &.currentDegree {
+              font-size: 1.2rem;
+              margin-top: 7.5px;
+            }
+          }
+          div {
+            @include center;
+            width: 100%;
+            height: 33.33%;
+            img {
+              height: 55%;
+            }
+            .fall {
+              font-size: 0.9rem;
+              margin-top: 1.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  nav {
+    @include center-se;
+    width: 100%;
+    height: 10%;
+    //padding: 0 50px;
+
+    i {
+      max-width: 20px;
+      color: rgba(255, 255, 255, 1);
+      font-size: 1.15rem;
+      cursor: pointer;
+      svg {
+        width: 100%;
+        fill: #fff;
+        transition: all 0.2s ease;
+      }
+
+      &:hover {
+        svg {
+          fill: #799ed0;
+        }
+      }
+    }
+  }
 }
 </style>
