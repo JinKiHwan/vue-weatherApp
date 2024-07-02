@@ -2,16 +2,19 @@
   <div class="wrap">
     <div class="container">
       <MainComp />
+      <SubViewComp />
     </div>
   </div>
 </template>
 
 <script>
 import MainComp from '../components/MainComp.vue';
+import SubViewComp from '../components/SubViewComp.vue';
 
 export default {
   components: {
     MainComp,
+    SubViewComp,
   },
 };
 </script>

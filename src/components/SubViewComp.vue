@@ -1,5 +1,5 @@
 <template>
-  <div class="leftContainer">
+  <div class="rightContainer">
     <div id="cityNameBox">
       <div class="cityName">
         <p>San Fransisco</p>
@@ -14,45 +14,26 @@
         </div>
       </div>
       <div class="weatherBox">
-        <div class="weatherDegree">
-          <p>10&deg;</p>
+        <div class="airCondition">
+          <p>매우 추움</p>
         </div>
-        <div class="weatherIcon">
-          <img src="../assets/img/01d.png" alt="" />
-        </div>
-        <div class="weatherData">
-          <div
-            v-for="Temporary in TemporaryData"
-            :key="Temporary.title"
-            class="detailData">
-            <p>{{ Temporary.title }}</p>
-            <p>{{ Temporary.value }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="todayWeather">
-      <div class="textBox">
-        <p>시간대별 날씨 정보</p>
-        <p>이번주 날씨 보기</p>
-      </div>
-
-      <div class="timelyWeatherBox">
-        <div class="timelyWeather">
-          <div class="icon">
-            <img src="../assets/img/01n.png" alt="" />
+        <div class="deatail">
+          <div class="title">
+            <p>Detail Temperatures</p>
           </div>
           <div class="data">
-            <p class="time">2pm</p>
-            <p class="currentDegree">32&deg;</p>
-            <div>
-              <img src="../assets/img/drop.png" alt="" />
-              <p class="fall">15%</p>
+            <div class="dataName">
+              <p></p>
+              <p></p>
+            </div>
+            <div class="dataValue">
+              <p><span></span>&deg;</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <Map />
     <nav>
       <i class="home">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -83,37 +64,16 @@
 </template>
 
 <script>
+import Map from '../components/MapComp.vue';
+
 export default {
-  data() {
-    return {
-      //임시데이터
-      TemporaryData: [
-        {
-          title: '습도',
-          value: '88%',
-        },
-        {
-          title: '풍속',
-          value: '10m/s',
-        },
-        {
-          title: '풍향',
-          value: '북서',
-        },
-      ],
-    };
+  components: {
+    Map,
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
 @import '../scss/main.scss';
-
-.leftContainer {
-  width: 324px;
-  height: 780px;
-  border-radius: 50px;
-  background: linear-gradient(#16455f, #0e1239);
-  box-shadow: 5px 5px 10px gray;
-}
+@import '../scss/sub.scss';
 </style>
